@@ -1,0 +1,26 @@
+interface LightBehavior { void activate(); }
+
+LightBehavior motionTrigger = () -> System.out.println("Light ON with motion sensor pattern");
+LightBehavior timeTrigger   = () -> System.out.println("Light ON with evening dim mode");
+LightBehavior voiceTrigger  = () -> System.out.println("Light ON with voice-activated brightness");
+motionTrigger.activate(); timeTrigger.activate(); voiceTrigger.activate();
+
+class Product { int price; int rating; int discount; }
+List<Product> products = getProductList();
+products.sort((p1, p2) -> p1.price - p2.price);
+products.sort((p1, p2) -> p2.rating - p1.rating);
+products.sort((p1, p2) -> p2.discount - p1.discount);
+
+class Alert { String type; }
+List<Alert> alerts = getAlerts();
+List<Alert> criticalAlerts = alerts.stream().filter(a -> a.type.equals("Critical")).collect(Collectors.toList());
+
+List<String> patientIds = List.of("P101","P102","P103");
+patientIds.forEach(System.out::println);
+
+List<String> employees = List.of("Shiva","Ankit","Priya");
+employees.stream().map(String::toUpperCase).forEach(System.out::println);
+
+class Invoice { String transactionId; Invoice(String id){ this.transactionId=id; } }
+List<String> txnIds = List.of("TXN001","TXN002");
+List<Invoice> invoices = txnIds.stream().map(Invoice::new).collect(Collectors.toList());
