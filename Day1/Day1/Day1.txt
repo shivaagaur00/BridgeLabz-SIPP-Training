@@ -1,0 +1,28 @@
+Class Pet { name, age }
+Class Dog extends Pet
+Class Cat extends Pet
+Class Bird extends Pet
+Use constructors to set values
+
+
+Class Member { name, id, membershipDate }
+Method checkValidity()
+
+
+Use Stack to store text operations
+push(operation) when action done
+pop() to undo last action
+
+
+Use Queue for customers
+If emergency → serve first
+Else serve in normal order
+
+
+HashMap<name, score>
+Find highest score using stream or loop
+
+
+ArrayList<Employee>
+Add employees
+Show employee details
