@@ -25,7 +25,7 @@ Array timeSlots[n]
 Pointer = 0
 For each question:
     start timer
-    if time left < 5 sec → trigger warning
+    if time left < 5 sec - trigger warning
     move pointer circularly
 
 
