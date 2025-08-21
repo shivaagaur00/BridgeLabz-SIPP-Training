@@ -1,0 +1,19 @@
+CLASS Pet
+    ATTR name, age, breed
+    CONSTRUCTOR(name, age, breed)
+
+CLASS Dog EXTENDS Pet
+    ATTR isTrained
+    CONSTRUCTOR(name, age, breed, isTrained)
+
+CLASS Cat EXTENDS Pet
+    ATTR color
+    CONSTRUCTOR(name, age, breed, color)
+
+CLASS Bird EXTENDS Pet
+    ATTR canTalk
+    CONSTRUCTOR(name, age, breed, canTalk)
+
+dog = NEW Dog("Rocky", 3, "Labrador", true)
+cat = NEW Cat("Whiskers", 2, "Persian", "White")
+bird = NEW Bird("Mittu", 1, "Parrot", true)
