@@ -1,0 +1,30 @@
+CLASS Customer
+    ATTR name, address
+    CONSTRUCTOR(name, address)
+
+CLASS Restaurant
+    ATTR name, location
+    CONSTRUCTOR(name, location)
+
+CLASS DeliveryBoy
+    ATTR name, contact
+    CONSTRUCTOR(name, contact)
+
+CLASS Order
+    ATTR customer, restaurant, deliveryBoy
+    CONSTRUCTOR(customer, restaurant, deliveryBoy)
+        SET this.customer = customer
+        SET this.restaurant = restaurant
+        SET this.deliveryBoy = deliveryBoy
+
+    METHOD showOrderDetails()
+        PRINT "Customer: " + customer.name + " (" + customer.address + ")"
+        PRINT "Restaurant: " + restaurant.name + " (" + restaurant.location + ")"
+        PRINT "Delivery Boy: " + deliveryBoy.name + " (" + deliveryBoy.contact + ")"
+
+CREATE cust = NEW Customer("Shiva", "Delhi")
+CREATE rest = NEW Restaurant("FoodHub", "Connaught Place")
+CREATE boy = NEW DeliveryBoy("Ravi", "9876543210")
+
+CREATE order = NEW Order(cust, rest, boy)
+order.showOrderDetails()
