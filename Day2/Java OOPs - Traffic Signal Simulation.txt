@@ -1,0 +1,28 @@
+Pseudo-code for Java OOPs - Traffic Signal Simulation
+--------------------------------------------------
+ENUM TrafficLight { RED, YELLOW, GREEN }
+
+CLASS TrafficSignal
+    PRIVATE current : TrafficLight
+
+    CONSTRUCTOR()
+        current = RED
+    END CONSTRUCTOR
+
+    METHOD switchLight()
+        IF current == RED THEN current = GREEN
+        ELSE IF current == GREEN THEN current = YELLOW
+        ELSE current = RED
+    END METHOD
+
+    METHOD showLight()
+        PRINT "Current Light: " + current
+    END METHOD
+END CLASS
+
+MAIN
+    signal = NEW TrafficSignal()
+    CALL signal.showLight()
+    CALL signal.switchLight()
+    CALL signal.showLight()
+END MAIN

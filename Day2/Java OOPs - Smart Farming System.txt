@@ -1,0 +1,32 @@
+Pseudo-code for Java OOPs - Smart Farming System
+--------------------------------------------------
+ABSTRACT CLASS Crop
+    ABSTRACT METHOD waterRequirement()
+    ABSTRACT METHOD harvestTime()
+END CLASS
+
+CLASS Rice EXTENDS Crop
+    METHOD waterRequirement()
+        PRINT "Rice requires high water."
+    END METHOD
+
+    METHOD harvestTime()
+        PRINT "Harvest after 120 days."
+    END METHOD
+END CLASS
+
+CLASS Wheat EXTENDS Crop
+    METHOD waterRequirement()
+        PRINT "Wheat requires medium water."
+    END METHOD
+
+    METHOD harvestTime()
+        PRINT "Harvest after 90 days."
+    END METHOD
+END CLASS
+
+MAIN
+    rice = NEW Rice()
+    CALL rice.waterRequirement()
+    CALL rice.harvestTime()
+END MAIN

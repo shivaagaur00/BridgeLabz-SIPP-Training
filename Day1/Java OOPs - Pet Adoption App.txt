@@ -1,0 +1,37 @@
+Pseudo-code for Java OOPs - Pet Adoption App
+--------------------------------------------------
+CLASS Pet
+    PRIVATE name : STRING
+    PRIVATE age : INTEGER
+    CONSTRUCTOR(name, age)
+        SET this.name = name
+        SET this.age = age
+    END CONSTRUCTOR
+
+    METHOD displayInfo()
+        PRINT "Pet Name: " + name + ", Age: " + age
+    END METHOD
+END CLASS
+
+CLASS Dog EXTENDS Pet
+    CONSTRUCTOR(name, age)
+        CALL SUPER(name, age)
+    END CONSTRUCTOR
+END CLASS
+
+CLASS Cat EXTENDS Pet
+    CONSTRUCTOR(name, age)
+        CALL SUPER(name, age)
+    END CONSTRUCTOR
+END CLASS
+
+CLASS Bird EXTENDS Pet
+    CONSTRUCTOR(name, age)
+        CALL SUPER(name, age)
+    END CONSTRUCTOR
+END CLASS
+
+MAIN
+    CREATE dog = NEW Dog("Bruno", 3)
+    CALL dog.displayInfo()
+END MAIN

@@ -1,0 +1,26 @@
+Pseudo-code for Collections - Employee Record Keeper
+--------------------------------------------------
+CLASS Employee
+    PRIVATE name : STRING
+    PRIVATE department : STRING
+
+    CONSTRUCTOR(name, dept)
+        SET this.name = name
+        SET this.department = dept
+    END CONSTRUCTOR
+END CLASS
+
+MAIN
+    CREATE employees : ArrayList<Employee>
+    employees.add(NEW Employee("Alice", "IT"))
+    employees.add(NEW Employee("Bob", "HR"))
+    employees.add(NEW Employee("Charlie", "IT"))
+
+    itEmployees = employees.stream()
+                           .filter(e -> e.department == "IT")
+                           .collect(toList())
+
+    FOR emp IN itEmployees
+        PRINT emp.name
+    END FOR
+END MAIN

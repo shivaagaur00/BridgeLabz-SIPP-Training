@@ -1,0 +1,35 @@
+Pseudo-code for DSA - Undo Feature in Text Editor
+--------------------------------------------------
+CLASS TextEditor
+    PRIVATE stack : STACK of STRING
+    PRIVATE content : STRING
+
+    CONSTRUCTOR()
+        stack = EMPTY STACK
+        content = ""
+    END CONSTRUCTOR
+
+    METHOD type(text : STRING)
+        PUSH content INTO stack
+        content = content + text
+    END METHOD
+
+    METHOD undo()
+        IF stack NOT EMPTY THEN
+            content = POP stack
+        ENDIF
+    END METHOD
+
+    METHOD getContent() RETURNS STRING
+        RETURN content
+    END METHOD
+END CLASS
+
+MAIN
+    CREATE editor = NEW TextEditor()
+    CALL editor.type("Hello ")
+    CALL editor.type("World")
+    PRINT editor.getContent()   // Hello World
+    CALL editor.undo()
+    PRINT editor.getContent()   // Hello 
+END MAIN

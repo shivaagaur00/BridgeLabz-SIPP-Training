@@ -1,0 +1,14 @@
+Pseudo-code for Collections - Student Score Storage
+--------------------------------------------------
+MAIN
+    CREATE scores : HashMap<String, Integer>
+    scores.put("Alice", 85)
+    scores.put("Bob", 92)
+    scores.put("Charlie", 78)
+
+    highest = scores.entrySet().stream()
+                     .max( (a,b) -> a.value.compareTo(b.value) )
+                     .get()
+
+    PRINT "Highest Scorer: " + highest.key + " with score " + highest.value
+END MAIN

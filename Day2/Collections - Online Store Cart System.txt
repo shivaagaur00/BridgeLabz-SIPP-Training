@@ -1,0 +1,34 @@
+Pseudo-code for Collections - Online Store Cart System
+--------------------------------------------------
+CLASS Item
+    PRIVATE name : STRING
+    PRIVATE price : FLOAT
+
+    CONSTRUCTOR(name, price)
+        this.name = name
+        this.price = price
+    END CONSTRUCTOR
+END CLASS
+
+CLASS Cart
+    PRIVATE items : List<Item>
+
+    METHOD addItem(item : Item)
+        items.add(item)
+    END METHOD
+
+    GENERIC METHOD calculateTotal()
+        total = 0
+        FOR item IN items
+            total += item.price
+        END FOR
+        RETURN total
+    END METHOD
+END CLASS
+
+MAIN
+    cart = NEW Cart()
+    cart.addItem(Item("Book", 200))
+    cart.addItem(Item("Pen", 20))
+    PRINT "Total Price: " + cart.calculateTotal()
+END MAIN

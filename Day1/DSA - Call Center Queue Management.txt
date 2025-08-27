@@ -1,0 +1,41 @@
+Pseudo-code for DSA - Call Center Queue Management
+--------------------------------------------------
+CLASS Customer
+    PRIVATE name : STRING
+    PRIVATE type : STRING   // "normal" or "emergency"
+
+    CONSTRUCTOR(name, type)
+        SET this.name = name
+        SET this.type = type
+    END CONSTRUCTOR
+END CLASS
+
+CLASS CallCenter
+    PRIVATE normalQueue : QUEUE
+    PRIVATE emergencyQueue : QUEUE
+
+    METHOD addCustomer(customer : Customer)
+        IF customer.type == "emergency" THEN
+            ENQUEUE emergencyQueue, customer
+        ELSE
+            ENQUEUE normalQueue, customer
+        ENDIF
+    END METHOD
+
+    METHOD serveCustomer()
+        IF emergencyQueue NOT EMPTY THEN
+            RETURN DEQUEUE emergencyQueue
+        ELSE IF normalQueue NOT EMPTY THEN
+            RETURN DEQUEUE normalQueue
+        ELSE
+            RETURN NULL
+        ENDIF
+    END METHOD
+END CLASS
+
+MAIN
+    CREATE cc = NEW CallCenter()
+    CALL cc.addCustomer(NEW Customer("Alice", "normal"))
+    CALL cc.addCustomer(NEW Customer("Bob", "emergency"))
+    PRINT cc.serveCustomer().name  // Bob served first
+END MAIN

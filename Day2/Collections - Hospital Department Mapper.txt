@@ -1,0 +1,25 @@
+Pseudo-code for Collections - Hospital Department Mapper
+--------------------------------------------------
+CLASS Doctor
+    PRIVATE name : STRING
+    PRIVATE specialization : STRING
+
+    CONSTRUCTOR(name, specialization)
+        this.name = name
+        this.specialization = specialization
+    END CONSTRUCTOR
+END CLASS
+
+MAIN
+    deptMap : Map<String, List<Doctor>>
+    deptMap["Cardiology"] = [Doctor("Dr A", "Cardiology"), Doctor("Dr B", "Cardiology")]
+    deptMap["Neurology"] = [Doctor("Dr C", "Neurology")]
+
+    neurologists = deptMap["Neurology"].stream()
+                  .filter(d -> d.specialization == "Neurology")
+                  .collect(toList())
+
+    FOR doc IN neurologists
+        PRINT doc.name
+    END FOR
+END MAIN

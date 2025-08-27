@@ -1,0 +1,41 @@
+Pseudo-code for Java OOPs - Library Membership Tracker
+--------------------------------------------------
+CLASS Member
+    PRIVATE name : STRING
+    PRIVATE memberId : STRING
+    PRIVATE membershipDate : DATE
+    PRIVATE validityMonths : INTEGER
+
+    CONSTRUCTOR(name, memberId, membershipDate, validityMonths)
+        SET this.name = name
+        SET this.memberId = memberId
+        SET this.membershipDate = membershipDate
+        SET this.validityMonths = validityMonths
+    END CONSTRUCTOR
+
+    METHOD checkValidity(currentDate : DATE) RETURNS BOOLEAN
+        expiryDate = membershipDate + validityMonths months
+        IF currentDate <= expiryDate THEN
+            RETURN TRUE
+        ELSE
+            RETURN FALSE
+        ENDIF
+    END METHOD
+
+    METHOD displayDetails()
+        PRINT "Name: " + name
+        PRINT "ID: " + memberId
+        PRINT "Membership Date: " + membershipDate
+        PRINT "Valid Till: " + (membershipDate + validityMonths months)
+    END METHOD
+END CLASS
+
+MAIN
+    CREATE member1 = NEW Member("Alice", "M101", "2024-08-01", 12)
+    CALL member1.displayDetails()
+    IF member1.checkValidity("2025-07-15") THEN
+        PRINT "Membership Active"
+    ELSE
+        PRINT "Membership Expired"
+    ENDIF
+END MAIN

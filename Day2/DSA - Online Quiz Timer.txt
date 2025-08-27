@@ -1,0 +1,25 @@
+Pseudo-code for DSA - Online Quiz Timer
+--------------------------------------------------
+CLASS QuizTimer
+    PRIVATE slots : ARRAY
+    PRIVATE n : INTEGER
+
+    CONSTRUCTOR(n)
+        this.n = n
+        slots = ARRAY of size n
+    END CONSTRUCTOR
+
+    METHOD runTimer()
+        FOR i = 0 TO n-1
+            PRINT "Time for Question " + (i+1)
+            IF i == n-1 THEN
+                PRINT "Warning: Last Question!"
+            ENDIF
+        END FOR
+    END METHOD
+END CLASS
+
+MAIN
+    timer = NEW QuizTimer(5)
+    CALL timer.runTimer()
+END MAIN
