@@ -1,0 +1,17 @@
+
+Attendance Marker - Pseudo-code
+-------------------------------
+
+CLASS AttendanceBook
+    ATTRIBUTES: students, days, grid[students][days]
+    METHOD mark(student, day, status)
+    METHOD update(student, day, status)
+    METHOD monthlyPresentCount(student)
+    METHOD rowString(student)
+
+MAIN:
+    CREATE AttendanceBook(3, 31)
+    Student1 first week: P,P,A,P,P,P,A
+    UPDATE day3 from 'A' to 'P'
+    FILL rest as mostly 'P'
+    COUNT presents for Student1

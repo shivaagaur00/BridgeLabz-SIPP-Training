@@ -1,0 +1,36 @@
+Pseudo-code Problem: Online Exam Portal (Basic)
+Concepts: Inheritance, Method Overriding, Polymorphism
+
+class User
+    attributes: username, password
+    method login()
+        print("Verifying credentials...")
+
+class Student extends User
+    attributes: enrolledCourses
+    override method login()
+        if username and password valid
+            if enrolledCourses not empty
+                print("Access granted. Show exams.")
+            else
+                print("Student not enrolled. Access denied.")
+        else
+            print("Invalid credentials. Access denied.")
+
+class Admin extends User
+    attributes: adminPrivileges
+    override method login()
+        if username and password valid
+            if adminPrivileges == true
+                print("Access granted. Show exam management tools.")
+            else
+                print("Not an admin. Access denied.")
+        else
+            print("Invalid credentials. Access denied.")
+
+Example Run:
+student = new Student("john123","pass123", ["Math"])
+student.login()
+
+admin = new Admin("admin01","secure","true")
+admin.login()

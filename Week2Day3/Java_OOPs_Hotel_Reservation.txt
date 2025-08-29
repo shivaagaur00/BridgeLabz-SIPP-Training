@@ -1,0 +1,23 @@
+Pseudo-code Problem: Hotel Room Reservation System
+Concepts: Inheritance, Polymorphism, Encapsulation
+
+class Room
+    attributes: roomNumber, customerName, daysStayed
+    method calculateBill() → return 0
+
+class DeluxeRoom extends Room
+    private rate = 3000
+    override method calculateBill()
+        return daysStayed * rate
+
+class SuiteRoom extends Room
+    private rate = 5000
+    override method calculateBill()
+        return daysStayed * rate
+
+Example Run:
+Ravi books DeluxeRoom for 3 nights
+Output: Bill = 9000
+
+Anita books SuiteRoom for 2 nights
+Output: Bill = 10000

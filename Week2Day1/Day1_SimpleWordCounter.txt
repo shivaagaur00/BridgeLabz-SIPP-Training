@@ -1,0 +1,13 @@
+
+Simple Word Counter - Pseudo-code
+---------------------------------
+
+MAIN:
+    INPUT paragraph
+    NORMALIZE → lowercase, remove punctuation
+    SPLIT into words
+    FOR each word
+        IF in map → increment
+        ELSE → put word=1
+    SORT by frequency desc, word asc
+    PRINT results

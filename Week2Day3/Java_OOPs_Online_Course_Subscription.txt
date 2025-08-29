@@ -1,0 +1,34 @@
+Pseudo-code Problem: Online Course Subscription System
+Concepts: Encapsulation, Composition, ArrayList/HashSet
+
+class Course
+    attributes: title, duration, price
+    methods: getDetails()
+
+class Student
+    attributes: name, email, enrolledCourses (List<Course>)
+    method enrollCourse(course)
+        if course not in enrolledCourses
+            enrolledCourses.add(course)
+            print("Enrolled successfully.")
+        else
+            print("Already enrolled.")
+    method viewEnrolledCourses()
+        for course in enrolledCourses
+            print(course.getDetails())
+
+Example Run:
+Course1 = new Course("Java Programming Basics", 6 weeks, 4999)
+Course2 = new Course("Data Structures in Java", 8 weeks, 5999)
+Course3 = new Course("Spring Boot for Web Development", 10 weeks, 6999)
+
+Amit = new Student("Amit","amit@email")
+Amit.enrollCourse(Course1)
+Amit.enrollCourse(Course2)
+
+Priya = new Student("Priya","priya@email")
+Priya.enrollCourse(Course3)
+Priya.enrollCourse(Course1)
+
+Amit.viewEnrolledCourses()
+Priya.viewEnrolledCourses()

@@ -1,0 +1,28 @@
+Pseudo-code Problem: Student Rank List
+Concepts: Merge Sort, Comparator Logic
+
+class Student
+    attributes: name, marks
+
+method mergeSort(students[])
+    if length <= 1 → return
+    split into left and right
+    mergeSort(left), mergeSort(right)
+    merge(left,right)
+
+method merge(left,right)
+    result = []
+    while left and right not empty
+        if left[0].marks > right[0].marks
+            add left[0] to result
+        else if left[0].marks == right[0].marks
+            compare names alphabetically
+            add smaller name first
+        else
+            add right[0] to result
+    append remaining elements
+    return result
+
+Example Run:
+Input: [("Amit",92),("Bhavna",92),("Kiran",85),("Dinesh",78),("Charu",92)]
+Output: Amit-92, Bhavna-92, Charu-92, Kiran-85, Dinesh-78

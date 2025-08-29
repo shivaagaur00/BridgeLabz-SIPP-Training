@@ -1,0 +1,25 @@
+Pseudo-code Problem: Hospital Department Mapping
+Concepts: Map<String, List<Doctor>>, Generics, Encapsulation
+
+class Doctor
+    attributes: name, specialization, experienceYears
+    method getDetails()
+
+Directory: Map<String, List<Doctor>>
+
+method addDoctor(department, doctor)
+    if department not in map
+        map[department] = new List<Doctor>()
+    map[department].add(doctor)
+
+method getDoctors(department)
+    if department in map
+        return map[department]
+    else
+        return "No doctors found"
+
+Example Run:
+Cardiology → [Dr. Mehta(15), Dr. Kapoor(10)]
+Neurology → [Dr. Sharma(10), Dr. Das(8)]
+Pediatrics → [Dr. Ritu(12), Dr. Anjali(7)]
+Query "Neurology" → Returns Dr. Sharma and Dr. Das

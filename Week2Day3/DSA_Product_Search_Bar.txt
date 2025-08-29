@@ -1,0 +1,20 @@
+Pseudo-code Problem: Product Search Bar
+Concepts: Binary Search
+
+method binarySearch(catalog[], target)
+    low = 0, high = catalog.length - 1
+    while low <= high
+        mid = (low + high) / 2
+        if catalog[mid] == target
+            return true
+        else if catalog[mid] < target
+            low = mid + 1
+        else
+            high = mid - 1
+    return false
+
+Example Run:
+catalog = ["AirPods", "Backpack", "Camera", "Laptop", "Shoes", "Smartphone", "Watch"]
+binarySearch(catalog,"Laptop") → Found
+binarySearch(catalog,"Headphones") → Not Found
+binarySearch(catalog,"Shoes") → Found

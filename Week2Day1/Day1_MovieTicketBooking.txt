@@ -1,0 +1,46 @@
+CLASS Ticket
+    ATTRIBUTES:
+        movieName
+        showTime
+        seatNumber
+        price
+        status = "BOOKED"
+    METHOD cancel()
+        status = "CANCELLED"
+
+CLASS Theatre
+    ATTRIBUTES:
+        shows = Map of (movie+time → bookedSeats)
+        pricing = Map of (movie+time → price)
+    METHOD addShow(movie, time, price, seatList)
+        Store empty bookedSeats for this show
+        Store price for this show
+    METHOD isSeatAvailable(movie, time, seat)
+        RETURN true if seat not in bookedSeats
+    METHOD issueTicket(movie, time, seat)
+        IF seat available
+            Mark seat as booked
+            CREATE Ticket
+            RETURN Ticket
+        ELSE
+            RETURN null
+    METHOD cancelTicket(ticket)
+        REMOVE seat from bookedSeats
+        ticket.cancel()
+
+CLASS Customer
+    ATTRIBUTES:
+        name
+        tickets (list)
+    METHOD book(theatre, movie, time, seat)
+        CALL theatre.issueTicket(...)
+        ADD ticket to tickets
+    METHOD cancel(theatre, ticket)
+        CALL theatre.cancelTicket(ticket)
+
+MAIN
+    CREATE Theatre cityPlex
+    ADD show "Avengers: Endgame", 6PM, seats A1..A20
+    CREATE Customer Ravi
+    Ravi books seat A12
+    Ravi cancels ticket later

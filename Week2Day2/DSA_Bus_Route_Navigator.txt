@@ -1,0 +1,39 @@
+Pseudo-code Problem: Bus Route Navigator
+Concepts: LinkedList, Insertion, Deletion, Search
+
+class Node
+    attributes: stopName, next
+
+class LinkedList
+    attribute: head
+
+    method insert(stopName, position)
+        create newNode
+        if position == 0
+            newNode.next = head
+            head = newNode
+        else
+            traverse until position-1
+            newNode.next = current.next
+            current.next = newNode
+
+    method delete(stopName)
+        if head.stopName == stopName
+            head = head.next
+        else
+            traverse until node.next.stopName == stopName
+            node.next = node.next.next
+
+    method search(stopName)
+        current = head
+        while current != null
+            if current.stopName == stopName
+                return true
+            current = current.next
+        return false
+
+Example Run:
+Route: Depot → Main Street → City Mall → Hospital → Airport
+Insert "University" after "City Mall"
+Delete "Hospital"
+Search "Airport" → Found

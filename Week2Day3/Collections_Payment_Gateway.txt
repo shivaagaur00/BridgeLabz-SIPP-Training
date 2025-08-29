@@ -1,0 +1,35 @@
+Pseudo-code Problem: Payment Gateway Processor
+Concepts: Generics, Polymorphism, Encapsulation
+
+class Transaction<T>
+    attribute: paymentDetails
+    method processPayment()
+        paymentDetails.process()
+
+    method getTransactionDetails()
+        return paymentDetails.toString()
+
+class UPI
+    attributes: upiId, amount, merchantName
+    method process()
+        print("Payment of ₹amount via UPI successful for merchantName")
+
+class Card
+    attributes: cardNumber, cvv, expiryDate, amount
+    method process()
+        print("Payment of ₹amount via Card ending cardNumber successful")
+
+class NetBanking
+    attributes: bankName, accountNumber, amount
+    method process()
+        print("Payment of ₹amount via NetBanking (bankName) successful")
+
+Example Run:
+Transaction<UPI> t1 = new Transaction<>(new UPI("user@upi",1200,"Amazon"))
+t1.processPayment()
+
+Transaction<Card> t2 = new Transaction<>(new Card("1234-5678-9876-5432","123","12/27",5000))
+t2.processPayment()
+
+Transaction<NetBanking> t3 = new Transaction<>(new NetBanking("HDFC","00112233",8000))
+t3.processPayment()

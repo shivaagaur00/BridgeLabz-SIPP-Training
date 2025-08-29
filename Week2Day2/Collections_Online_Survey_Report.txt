@@ -1,0 +1,26 @@
+Pseudo-code Problem: Online Survey Report Generator
+Concepts: groupingBy(), Aggregation, Averages
+
+class SurveyResponse
+    attributes: restaurantName, rating
+
+method generateReport(responses)
+    group = dictionary with restaurantName as key
+    for each response in responses
+        add response.rating to group[response.restaurantName]
+
+    report = {}
+    for restaurant in group
+        avg = sum(group[restaurant]) / count(group[restaurant])
+        report[restaurant] = avg
+
+    highest = max(report.values())
+    lowest = min(report.values())
+
+    print("Average ratings:", report)
+    print("Highest rated restaurant:", highest)
+    print("Lowest rated restaurant:", lowest)
+
+Example Run:
+Input: [PizzaHut→4, PizzaHut→5, KFC→3, Subway→5, Subway→4]
+Output: PizzaHut=4.5, KFC=3, Subway=4.5

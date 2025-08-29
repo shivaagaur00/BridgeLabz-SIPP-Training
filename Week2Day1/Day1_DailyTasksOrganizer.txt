@@ -1,0 +1,18 @@
+CLASS TaskManager
+    ATTRIBUTES:
+        LinkedHashMap tasks
+        nextId = 1
+    METHOD addTask(desc)
+        tasks[nextId] = desc
+        nextId++
+    METHOD removeTask(id)
+        REMOVE entry with key=id
+    METHOD viewTasks()
+        PRINT all tasks in insertion order
+
+MAIN
+    ADD Task1 "Check emails"
+    ADD Task2 "Prepare sales report"
+    ADD Task3 "Call client"
+    REMOVE Task2
+    PRINT remaining tasks → preserves original order

@@ -1,0 +1,16 @@
+CLASS BusRoute
+    ATTRIBUTE: linkedList stops
+    METHOD addAfter(existingStop, newStop)
+        FIND existingStop in linkedList
+        INSERT newStop immediately after it
+    METHOD remove(stop)
+        DELETE stop if exists
+    METHOD contains(stop)
+        RETURN true if stop found
+
+MAIN
+    INITIAL ROUTE = Depot → Main Street → City Mall → Hospital → Airport
+    ACTION 1: Add "University Stop" after "City Mall"
+    ACTION 2: Remove "Hospital"
+    ACTION 3: Search for "Airport"
+    OUTPUT: Confirm route list after each step

@@ -1,0 +1,49 @@
+CLASS User
+    ATTRIBUTES:
+        username
+        password
+    METHOD login(inputUsername, inputPassword)
+        IF inputUsername == username AND inputPassword == password
+            PRINT "Base login: credentials valid"
+            RETURN true
+        ELSE
+            PRINT "Base login: credentials invalid"
+            RETURN false
+
+CLASS Student EXTENDS User
+    ATTRIBUTES:
+        isRegistered (boolean)
+        enrolledCourses (list of course names)
+    METHOD login(inputUsername, inputPassword)
+        PRINT "Student trying to login..."
+        CALL super.login(inputUsername, inputPassword)
+        IF credentials invalid → RETURN false
+        IF isRegistered == false
+            PRINT "Access denied: not registered"
+            RETURN false
+        IF enrolledCourses is empty
+            PRINT "Access denied: no active enrollment"
+            RETURN false
+        PRINT "Login successful → Show available exams"
+        RETURN true
+
+CLASS Admin EXTENDS User
+    ATTRIBUTES:
+        staffId
+        hasPrivileges (boolean)
+    METHOD login(inputUsername, inputPassword)
+        PRINT "Admin trying to login..."
+        CALL super.login(inputUsername, inputPassword)
+        IF credentials invalid → RETURN false
+        IF staffId is missing OR hasPrivileges == false
+            PRINT "Access denied: no admin rights"
+            RETURN false
+        PRINT "Login successful → Show exam management tools"
+        RETURN true
+
+MAIN
+    CREATE Student john("john123", "pass123", registered=true, enrolled=["CS101"])
+    john.login("john123", "pass123")
+
+    CREATE Admin admin("adminA", "secure!", staffId="STAFF-01", hasPrivileges=true)
+    admin.login("adminA", "secure!")

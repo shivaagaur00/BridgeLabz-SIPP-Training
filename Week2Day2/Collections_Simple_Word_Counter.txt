@@ -1,0 +1,28 @@
+Pseudo-code Problem: Simple Word Counter
+Concepts: Map<String,Integer>, Stream API
+
+method countWords(text)
+    words = split(text, " ")
+    map = empty dictionary
+    for word in words
+        normalized = lowercase(removePunctuation(word))
+        if normalized in map
+            map[normalized]++
+        else
+            map[normalized] = 1
+    return map
+
+method mostFrequentWord(map)
+    max = 0
+    frequentWord = ""
+    for key in map
+        if map[key] > max
+            max = map[key]
+            frequentWord = key
+    return frequentWord
+
+Example Run:
+Input: "Sports bring people together. Sports inspire teamwork. Sports create leaders."
+Output:
+sports → 3, bring → 1, people → 1...
+Most frequent → sports

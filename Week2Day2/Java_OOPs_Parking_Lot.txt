@@ -1,0 +1,33 @@
+Pseudo-code Problem: Parking Lot Ticketing System
+Concepts: Inheritance, Polymorphism, Method Overriding
+
+class Vehicle
+    attributes: vehicleNumber, entryTime
+    method calculateFee(exitTime)
+        return 0
+
+class Car extends Vehicle
+    override method calculateFee(exitTime)
+        hours = ceil(exitTime - entryTime)
+        fee = 50 + (hours-1) * 30
+        return fee
+
+class Bike extends Vehicle
+    override method calculateFee(exitTime)
+        hours = ceil(exitTime - entryTime)
+        fee = 20 + (hours-1) * 10
+        return fee
+
+class Truck extends Vehicle
+    override method calculateFee(exitTime)
+        hours = ceil(exitTime - entryTime)
+        fee = 100 + (hours-1) * 50
+        return fee
+
+System Flow:
+- On entry: create object of Car/Bike/Truck with entryTime
+- On exit: call calculateFee(exitTime)
+- Print ticket: vehicleNumber, type, fee
+
+Example Run:
+car KA05AB1234 enters 10:00, exits 13:30 → Fee = 125
